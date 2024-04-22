@@ -7,17 +7,6 @@ class ProductManager {
     constructor() {
         this.path = path.join(__dirname, 'productos.json');
         this.products = [];
-        this.init();
-    }
-
-    async init() {
-        try {
-            const data = await fs.readFile(this.path, 'utf-8');
-            this.products = JSON.parse(data);
-        } catch (error) {
-            console.error('Error al leer el archivo:', error);
-            this.products = [];
-        }
     }
 
     async leerArchivo() {
